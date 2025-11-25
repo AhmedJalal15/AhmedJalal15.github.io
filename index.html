@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Galal - IT Portfolio</title>
+    <title>Ahmed Galal-Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -26,70 +26,119 @@
     </script>
 
     <style>
-        /* Custom Styles for Glass Effect and Timeline */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .dark .glass-card {
-            background: rgba(30, 41, 59, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        /* Timeline line styling */
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: #e2e8f0;
-        }
-        .dark .timeline-line::before {
-            background: #334155;
-        }
+ /* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+/*              Glass Effect & General Card Styling                 */
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
 
-        /* Smooth reveal animation classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-        /* Gallery Slider Styles */
-        .gallery-container {
-            height: 340px; /* Fixed height */
-        }
-        /* تم تغيير المعرف إلى كلاس ليعمل مع عدة سلايدرات */
-        .slider-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            height: 100%;
-        }
-        .slide {
-            min-width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .slide img:hover {
-            transform: scale(1.02);
-        }
+.dark .glass-card {
+    background: rgba(30, 41, 59, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+/*                           Timeline Line                           */
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+
+.timeline-line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: #e2e8f0;
+}
+
+.dark .timeline-line::before {
+    background: #334155;
+}
+
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+/*                        Reveal Animation                           */
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+/*                           Slider Gallery                           */
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+
+.gallery-container {
+    height: 340px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.slide img:hover {
+    transform: scale(1.02);
+}
+
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+/*                       Web Counter Box Style                        */
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+
+.web-counter-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.dark .web-counter-box {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.web-counter-box img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.web-counter-box img:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300">
@@ -361,7 +410,7 @@
                     <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:bg-primary transition-colors"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 md:text-right">
                         <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm">
-                            ERP System Management and staff training at Abu 'Fteira Cooperative Society.
+                            ERP system management and staff training at Abu 'Fteira Cooperative Society, with a focus on meeting the electronic supply requirements for suppliers.
                         </p>
                     </div>
                 </div>
@@ -393,7 +442,7 @@
                     <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:bg-primary transition-colors"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 md:text-right">
                         <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm">
-                            Data analysis, working on a website system for Quality International.
+                            Data analysis, working on a website system for <a href="https://qualitykw.com/leadership" target="_blank">Quality International</a>.
                         </p>
                     </div>
                 </div>
@@ -534,7 +583,7 @@
                         <div class="w-12 h-12 mx-auto mb-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-full flex items-center justify-center text-indigo-500">
                              <i class="fas fa-network-wired text-xl"></i>
                         </div>
-                        <h4 class="font-bold text-lg">CCNA R&S</h4>
+                        <h4 class="font-bold text-lg">CCNA R&S </h4>
                         <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Cisco Training</p>
                     </div>
                     <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 text-center hover:shadow-lg transition-shadow">
@@ -655,54 +704,55 @@
                 
                 <div class="slider-track">
                     <div class="slide">
-                        <img src="pic/Project/1.png" 
+                        <!--<img src="pic/Project/1.png" -->
+                        <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Project+1'" 
                              alt="Project 1" data-link="https://example.com/project1">
 
                     </div>
                     <div class="slide">
-                        <img src="pic/Project/2.png" 
+                        <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/1e40af/white?text=Project+2'" 
                              alt="Project 2" data-link="https://example.com/project2">
                     </div>
 					 <div class="slide">
-                        <img src="pic/Project/3.png" 
+                        <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Project+3'" 
                              alt="Project 3" data-link="https://example.com/project3">
                     </div>
                     <div class="slide">
-                        <img src="pic/Project/4.png" 
+                        <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Project+4'" 
                              alt="Project 4" data-link="https://example.com/project4">
                     </div>
                     <div class="slide">
-                        <img src="pic/Project/5.png" 
+                        <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/1e40af/white?text=Project+5'" 
                              alt="Project 5" data-link="https://example.com/project5">
                     </div>
                    
                     <div class="slide">
-                        <img src="pic/Project/6.png" 
+                        <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/1e40af/white?text=Project+6'" 
                              alt="Project 6" data-link="https://example.com/project6">
                     </div>
                     <div class="slide">
-                        <img src="pic/Project/7.png" 
+                        <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Project+7'" 
                              alt="Project 7" data-link="https://example.com/project7">
                     </div>
                     <div class="slide">
-                        <img src="pic/Project/8.png" 
+                        <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/1e40af/white?text=Project+8'" 
                              alt="Project 8" data-link="https://example.com/project8">
                     </div>
                     <div class="slide">
-                        <img src="pic/Project/9.png" 
+                        <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Project+9'" 
                              alt="Project 9" data-link="https://example.com/project9">
                     </div>
                     <div class="slide">
-                        <img src="pic/Project/10.png" 
+                        <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/1e40af/white?text=Project+10'" 
                              alt="Project 10" data-link="https://example.com/project10">
                     </div>
@@ -813,21 +863,13 @@
             </form>
         </div>
     </section>
-
-    <section id="visitor-count-section" class="py-10 bg-gray-50 dark:bg-slate-900 transition-colors duration-300 border-t border-gray-200 dark:border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 text-center reveal active">
-            <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">Visitor Count 📈</h3>
-            
-            <div id="visitor-counter" class="inline-block p-4 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-gray-200 dark:border-slate-700 transition-colors duration-300">
-                <span class="text-4xl font-extrabold text-primary" id="page-visits-display">
-                    
-                    <span class="text-gray-500 dark:text-gray-400">00000</span>
-                    </span>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Total Visits</p>
-            </div>
-
-        </div>
-    </section>
+	     <!-- Start of Web Counter -->
+<div class="mb-4 web-counter-box">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=115392661&style=0010&nbdigits=6&type=ip&initCount=0" 
+         title="Web Counter" 
+         alt="Hit counter" 
+         border="0">
+</div>
     <footer class="py-8 bg-black text-center text-gray-600 text-sm border-t border-gray-900">
         <p>&copy; 2025 Ahmed Galal.</p>
     </footer>
