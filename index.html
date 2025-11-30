@@ -1,13 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="page_title">Ahmed Galal-Portfolio</title>
+    <title>Ahmed Galal-Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.5/i18next.min.js"></script>
-
     
     <script>
         tailwind.config = {
@@ -29,7 +28,7 @@
 
     <style>
  /* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
-/* Glass Effect & General Card Styling                 */
+/*              Glass Effect & General Card Styling                 */
 /* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
 
 .glass-card {
@@ -44,24 +43,17 @@
 }
 
 /* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
-/* Timeline Line                           */
+/*                           Timeline Line                           */
 /* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
-/* تم تعديل هذا الكود ليعمل مع اتجاهات الـ RTL والـ LTR */
+
 .timeline-line::before {
     content: '';
     position: absolute;
+    left: 0;
     top: 0;
     height: 100%;
     width: 2px;
     background: #e2e8f0;
-}
-
-body[dir="ltr"] .timeline-line::before {
-    left: 0;
-}
-
-body[dir="rtl"] .timeline-line::before {
-    right: 0;
 }
 
 .dark .timeline-line::before {
@@ -69,7 +61,7 @@ body[dir="rtl"] .timeline-line::before {
 }
 
 /* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
-/* Reveal Animation                           */
+/*                        Reveal Animation                           */
 /* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
 
 .reveal {
@@ -84,7 +76,7 @@ body[dir="rtl"] .timeline-line::before {
 }
 
 /* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
-/* Slider Gallery                           */
+/*                           Slider Gallery                           */
 /* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
 
 .gallery-container {
@@ -118,6 +110,36 @@ body[dir="rtl"] .timeline-line::before {
     transform: scale(1.02);
 }
 
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+/*                       Web Counter Box Style                        */
+/* ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ */
+
+.web-counter-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.dark .web-counter-box {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.web-counter-box img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.web-counter-box img:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}
+
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300">
@@ -130,20 +152,14 @@ body[dir="rtl"] .timeline-line::before {
                 </div>
                 
                 <div class="hidden md:flex space-x-6 items-center">
-                    <a href="#home" class="hover:text-primary transition-colors font-medium" data-i18n="nav.home">Home</a>
-                    <a href="#about" class="hover:text-primary transition-colors font-medium" data-i18n="nav.about">About</a>
-                    <a href="#experience" class="hover:text-primary transition-colors font-medium" data-i18n="nav.experience">Experience</a>
-                    <a href="#skills" class="hover:text-primary transition-colors font-medium" data-i18n="nav.skills">Skills</a>
-                    <a href="#gallery" class="hover:text-primary transition-colors font-medium" data-i18n="nav.certificates">Certificates</a>
-                    <a href="#projects" class="hover:text-primary transition-colors font-medium" data-i18n="nav.projects">Projects</a>
-                    <a href="#contact" class="hover:text-primary transition-colors font-medium" data-i18n="nav.contact">Contact</a>
+                    <a href="#home" class="hover:text-primary transition-colors font-medium">Home</a>
+                    <a href="#about" class="hover:text-primary transition-colors font-medium">About</a>
+                    <a href="#experience" class="hover:text-primary transition-colors font-medium">Experience</a>
+                    <a href="#skills" class="hover:text-primary transition-colors font-medium">Skills</a>
+                    <a href="#gallery" class="hover:text-primary transition-colors font-medium">Certificates</a>
+                    <a href="#projects" class="hover:text-primary transition-colors font-medium">Projects</a>
+                    <a href="#contact" class="hover:text-primary transition-colors font-medium">Contact</a>
                     
-                    <select id="language-selector" class="bg-gray-100 dark:bg-slate-700/80 p-1.5 rounded-md text-sm font-semibold border border-gray-200 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
-                        <option value="en">English</option>
-                        <option value="ar">العربية</option>
-                        <option value="fr">Français</option>
-                    </select>
-
                     <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors focus:outline-none">
                         <i class="fas fa-moon dark:hidden text-gray-600"></i>
                         <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
@@ -155,11 +171,6 @@ body[dir="rtl"] .timeline-line::before {
                         <i class="fas fa-moon dark:hidden text-gray-600"></i>
                         <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
                     </button>
-                    <select id="language-selector-mobile" class="bg-gray-100 dark:bg-slate-700/80 p-1.5 rounded-md text-sm font-semibold border border-gray-200 dark:border-slate-600 focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer">
-                        <option value="en">EN</option>
-                        <option value="ar">AR</option>
-                        <option value="fr">FR</option>
-                    </select>
                     <button id="mobile-menu-btn" class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
@@ -169,13 +180,13 @@ body[dir="rtl"] .timeline-line::before {
 
         <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-800 border-t dark:border-slate-700 shadow-lg absolute w-full z-40">
             <div class="px-4 pt-2 pb-4 space-y-1">
-                <a href="#home" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg" data-i18n="nav.home">Home</a>
-                <a href="#about" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg" data-i18n="nav.about">About</a>
-                <a href="#experience" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg" data-i18n="nav.experience">Experience</a>
-                <a href="#skills" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg" data-i18n="nav.skills">Skills</a>
-                <a href="#gallery" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg" data-i18n="nav.certificates">Certificates</a>
-                <a href="#projects" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg" data-i18n="nav.projects">Projects</a>
-                <a href="#contact" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg" data-i18n="nav.contact">Contact</a>
+                <a href="#home" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg">Home</a>
+                <a href="#about" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg">About</a>
+                <a href="#experience" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg">Experience</a>
+                <a href="#skills" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg">Skills</a>
+                <a href="#gallery" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg">Certificates</a>
+                <a href="#projects" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg">Projects</a>
+                <a href="#contact" class="block px-3 py-3 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700 text-lg">Contact</a>
             </div>
         </div>
     </nav>
@@ -183,20 +194,20 @@ body[dir="rtl"] .timeline-line::before {
     <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 min-h-screen flex items-center">
         <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 w-full">
             <div class="flex-1 text-center md:text-left reveal active">
-                <div class="inline-block px-4 py-1 mb-4 text-sm font-bold text-primary bg-blue-100 dark:bg-blue-900/30 rounded-full" data-i18n="home.role">
+                <div class="inline-block px-4 py-1 mb-4 text-sm font-bold text-primary bg-blue-100 dark:bg-blue-900/30 rounded-full">
                     System Analyst & IT Specialist
                 </div>
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
-                    <span data-i18n="home.hi_im">Hi, I'm</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Ahmed Galal</span>
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Ahmed Galal</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed" data-i18n="home.bio">
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
                     Experienced IT professional based in Kuwait. Specializing in technical support, ERP systems, network surveillance, and web development.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#contact" class="px-8 py-3.5 bg-primary text-white rounded-lg font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/30 transform hover:-translate-y-1" data-i18n="home.contact_me_btn">
+                    <a href="#contact" class="px-8 py-3.5 bg-primary text-white rounded-lg font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/30 transform hover:-translate-y-1">
                         Contact Me
                     </a>
-                    <a href="#experience" class="px-8 py-3.5 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg font-bold hover:bg-gray-50 dark:hover:bg-slate-700 transition-all transform hover:-translate-y-1" data-i18n="home.view_exp_btn">
+                    <a href="#experience" class="px-8 py-3.5 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-lg font-bold hover:bg-gray-50 dark:hover:bg-slate-700 transition-all transform hover:-translate-y-1">
                         View Experience
                     </a>
                 </div>
@@ -220,8 +231,8 @@ body[dir="rtl"] .timeline-line::before {
                             <i class="fas fa-check"></i>
                         </div>
                         <div>
-                            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase font-semibold tracking-wider" data-i18n="home.status">Status</p>
-                            <p class="font-bold text-sm" data-i18n="home.available">Available</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase font-semibold tracking-wider">Status</p>
+                            <p class="font-bold text-sm">Available</p>
                         </div>
                     </div>
                 </div>
@@ -232,17 +243,17 @@ body[dir="rtl"] .timeline-line::before {
     <section id="about" class="py-24 bg-white dark:bg-slate-800/50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="about.title">About Me</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
                 <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6 reveal">
-                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="about.objective_title">Professional Objective</h3>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg" data-i18n="about.objective_p1">
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Professional Objective</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
                         I am a dedicated IT specialist with a strong background in System Analysis and Technical Support. My goal is to provide exceptional support in Windows operating systems, surveillance camera networks, and internet infrastructure.
                     </p>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg" data-i18n="about.objective_p2">
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
                         I have extensive experience working with Oracle ERP systems, developing websites, and managing WordPress content management systems.
                     </p>
                     
@@ -253,8 +264,8 @@ body[dir="rtl"] .timeline-line::before {
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-sm text-gray-500 dark:text-gray-400 uppercase" data-i18n="about.location_label">Location</h4>
-                                    <p class="font-semibold" data-i18n="about.location_value">Ahmadi, Kuwait</p>
+                                    <h4 class="font-bold text-sm text-gray-500 dark:text-gray-400 uppercase">Location</h4>
+                                    <p class="font-semibold">Ahmadi, Kuwait</p>
                                 </div>
                             </div>
                         </div>
@@ -264,8 +275,8 @@ body[dir="rtl"] .timeline-line::before {
                                     <i class="fas fa-globe"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-sm text-gray-500 dark:text-gray-400 uppercase" data-i18n="about.nationality_label">Nationality</h4>
-                                    <p class="font-semibold" data-i18n="about.nationality_value">Egyptian</p>
+                                    <h4 class="font-bold text-sm text-gray-500 dark:text-gray-400 uppercase">Nationality</h4>
+                                    <p class="font-semibold">Egyptian</p>
                                 </div>
                             </div>
                         </div>
@@ -275,23 +286,23 @@ body[dir="rtl"] .timeline-line::before {
                 <div class="grid grid-cols-2 gap-4 reveal">
                     <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 text-center">
                         <i class="fas fa-desktop text-4xl text-blue-500 mb-4 block"></i>
-                        <h4 class="font-bold mb-2" data-i18n="about.card1_title">Tech Support</h4>
-                        <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="about.card1_subtitle">Windows OS & Hardware</p>
+                        <h4 class="font-bold mb-2">Tech Support</h4>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Windows OS & Hardware</p>
                     </div>
                     <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 text-center">
                         <i class="fas fa-database text-4xl text-indigo-500 mb-4 block"></i>
-                        <h4 class="font-bold mb-2" data-i18n="about.card2_title">ERP Systems</h4>
-                        <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="about.card2_subtitle">Oracle Implementation</p>
+                        <h4 class="font-bold mb-2">ERP Systems</h4>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Oracle Implementation</p>
                     </div>
                     <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 text-center">
                         <i class="fas fa-video text-4xl text-red-500 mb-4 block"></i>
-                        <h4 class="font-bold mb-2" data-i18n="about.card3_title">Surveillance</h4>
-                        <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="about.card3_subtitle">CCTV & Network Security</p>
+                        <h4 class="font-bold mb-2">Surveillance</h4>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">CCTV & Network Security</p>
                     </div>
                     <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 text-center">
                         <i class="fas fa-code text-4xl text-green-500 mb-4 block"></i>
-                        <h4 class="font-bold mb-2" data-i18n="about.card4_title">Web Dev</h4>
-                        <p class="text-sm text-gray-500 dark:text-gray-400" data-i18n="about.card4_subtitle">Wordpress & Full Stack</p>
+                        <h4 class="font-bold mb-2">Web Dev</h4>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Wordpress & Full Stack</p>
                     </div>
                 </div>
             </div>
@@ -301,7 +312,7 @@ body[dir="rtl"] .timeline-line::before {
     <section id="experience" class="py-24 px-4 overflow-hidden">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="experience.title">Work History</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Work History</h2>
                 <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
             </div>
             
@@ -311,15 +322,15 @@ body[dir="rtl"] .timeline-line::before {
 
                 <div class="relative mb-16 md:flex md:justify-between items-center group reveal">
                     <div class="md:w-[45%] mb-4 md:mb-0 md:text-right">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white" data-i18n="exp.job1.title">Technical Support (Trained)</h3>
-                        <p class="text-primary font-semibold text-lg" data-i18n="exp.job1.company">Rumaithiya Cooperative Society</p>
-                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400" data-i18n="exp.job1.duration">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Technical Support (Trained)</h3>
+                        <p class="text-primary font-semibold text-lg">Rumaithiya Cooperative Society</p>
+                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400">
                             <i class="far fa-calendar-alt"></i> May 2022 - Present
                         </div>
                     </div>
                     <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-primary rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:scale-125 transition-transform shadow-lg shadow-blue-500/50"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 md:text-left">
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm" data-i18n="exp.job1.description">
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm">
                             Providing technical support for user problems, computer systems, and ERP system maintenance.
                         </p>
                     </div>
@@ -327,15 +338,15 @@ body[dir="rtl"] .timeline-line::before {
 
                 <div class="relative mb-16 md:flex md:justify-between items-center group flex-row-reverse reveal">
                     <div class="md:w-[45%] mb-4 md:mb-0 md:text-left">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white" data-i18n="exp.job2.title">Assistant IT Manager</h3>
-                        <p class="text-primary font-semibold text-lg" data-i18n="exp.job2.company">Rumaithiya Cooperative Society</p>
-                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400" data-i18n="exp.job2.duration">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Assistant IT Manager</h3>
+                        <p class="text-primary font-semibold text-lg">Rumaithiya Cooperative Society</p>
+                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400">
                             <i class="far fa-calendar-alt"></i> Jul 2021 - May 2022
                         </div>
                     </div>
                     <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:bg-primary transition-colors"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 md:text-right">
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm" data-i18n="exp.job2.description">
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm">
                             Supervised 16 branches, solved internal/external network issues, managed POS systems, catering branch systems, and hardware support.
                         </p>
                     </div>
@@ -343,15 +354,15 @@ body[dir="rtl"] .timeline-line::before {
 
                 <div class="relative mb-16 md:flex md:justify-between items-center group reveal">
                     <div class="md:w-[45%] mb-4 md:mb-0 md:text-right">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white" data-i18n="exp.job3.title">Technical Support</h3>
-                        <p class="text-primary font-semibold text-lg" data-i18n="exp.job3.company">Rumaithiya Cooperative Society</p>
-                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400" data-i18n="exp.job3.duration">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Technical Support</h3>
+                        <p class="text-primary font-semibold text-lg">Rumaithiya Cooperative Society</p>
+                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400">
                             <i class="far fa-calendar-alt"></i> Mar 2020 - Jul 2021
                         </div>
                     </div>
                     <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:bg-primary transition-colors"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 md:text-left">
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm" data-i18n="exp.job3.description">
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm">
                             Supported user problems, computer systems, and general ERP system usage.
                         </p>
                     </div>
@@ -359,15 +370,15 @@ body[dir="rtl"] .timeline-line::before {
 
                 <div class="relative mb-16 md:flex md:justify-between items-center group flex-row-reverse reveal">
                     <div class="md:w-[45%] mb-4 md:mb-0 md:text-left">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white" data-i18n="exp.job4.title">Technical Support</h3>
-                        <p class="text-primary font-semibold text-lg" data-i18n="exp.job4.company">Al Wafra Cooperative Society</p>
-                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400" data-i18n="exp.job4.duration">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Technical Support</h3>
+                        <p class="text-primary font-semibold text-lg">Al Wafra Cooperative Society</p>
+                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400">
                             <i class="far fa-calendar-alt"></i> Jan 2020 - Mar 2020
                         </div>
                     </div>
                     <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:bg-primary transition-colors"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 md:text-right">
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm" data-i18n="exp.job4.description">
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm">
                             Staff training on ERP system BBS, owner hro+.
                         </p>
                     </div>
@@ -375,15 +386,15 @@ body[dir="rtl"] .timeline-line::before {
 
                 <div class="relative mb-16 md:flex md:justify-between items-center group reveal">
                     <div class="md:w-[45%] mb-4 md:mb-0 md:text-right">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white" data-i18n="exp.job5.title">Technical Support</h3>
-                        <p class="text-primary font-semibold text-lg" data-i18n="exp.job5.company">Logic X - Al Naseem Cooperative Society</p>
-                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400" data-i18n="exp.job5.duration">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Technical Support</h3>
+                        <p class="text-primary font-semibold text-lg">Logic X - Al Naseem Cooperative Society</p>
+                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400">
                             <i class="far fa-calendar-alt"></i> Dec 2019 - Jan 2020
                         </div>
                     </div>
                     <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:bg-primary transition-colors"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 md:text-left">
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm" data-i18n="exp.job5.description">
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm">
                             ERP System Management and staff training at Al Naseem Cooperative Society, Supervising the 2019 annual inventory.
                         </p>
                     </div>
@@ -391,15 +402,15 @@ body[dir="rtl"] .timeline-line::before {
 
                 <div class="relative mb-16 md:flex md:justify-between items-center group flex-row-reverse reveal">
                     <div class="md:w-[45%] mb-4 md:mb-0 md:text-left">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white" data-i18n="exp.job6.title">Technical Support</h3>
-                        <p class="text-primary font-semibold text-lg" data-i18n="exp.job6.company">Logic X - Abu 'Fteira Cooperative Society</p>
-                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400" data-i18n="exp.job6.duration">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Technical Support</h3>
+                        <p class="text-primary font-semibold text-lg">Logic X - Abu 'Fteira Cooperative Society</p>
+                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400">
                             <i class="far fa-calendar-alt"></i> Sep 2019 - Dec 2019
                         </div>
                     </div>
                     <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:bg-primary transition-colors"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 md:text-right">
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm" data-i18n="exp.job6.description">
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm">
                             ERP system management and staff training at Abu 'Fteira Cooperative Society, with a focus on meeting the electronic supply requirements for suppliers.
                         </p>
                     </div>
@@ -407,15 +418,15 @@ body[dir="rtl"] .timeline-line::before {
 
                  <div class="relative mb-16 md:flex md:justify-between items-center group reveal">
                     <div class="md:w-[45%] mb-4 md:mb-0 md:text-right">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white" data-i18n="exp.job7.title">Technical Support</h3>
-                        <p class="text-primary font-semibold text-lg" data-i18n="exp.job7.company">Logic X - Fahad Al Ahmad Cooperative Society</p>
-                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400" data-i18n="exp.job7.duration">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Technical Support</h3>
+                        <p class="text-primary font-semibold text-lg">Logic X - Fahad Al Ahmad Cooperative Society</p>
+                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400">
                             <i class="far fa-calendar-alt"></i> Apr 2019 - Sep 2019
                         </div>
                     </div>
                     <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:bg-primary transition-colors"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 md:text-left">
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm" data-i18n="exp.job7.description">
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm">
                             ERP System Management and staff training at Fahad Al Ahmad Cooperative Society.
                         </p>
                     </div>
@@ -423,15 +434,15 @@ body[dir="rtl"] .timeline-line::before {
 
                  <div class="relative mb-16 md:flex md:justify-between items-center group flex-row-reverse reveal">
                     <div class="md:w-[45%] mb-4 md:mb-0 md:text-left">
-                        <h3 class="text-xl font-bold text-gray-800 dark:text-white" data-i18n="exp.job8.title">Data analysis</h3>
-                        <p class="text-primary font-semibold text-lg" data-i18n="exp.job8.company">Quality International</p>
-                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400" data-i18n="exp.job8.duration">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white">Data analysis</h3>
+                        <p class="text-primary font-semibold text-lg">Quality International</p>
+                        <div class="inline-flex items-center gap-2 mt-2 bg-blue-50 dark:bg-slate-800 px-3 py-1 rounded-full text-sm font-medium text-blue-600 dark:text-blue-400">
                             <i class="far fa-calendar-alt"></i> Oct 2018 - Apr 2019
                         </div>
                     </div>
                     <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:bg-primary transition-colors"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 md:text-right">
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm" data-i18n="exp.job8.description">
+                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm">
                             Data analysis, working on a website system for <a href="https://qualitykw.com/leadership" target="_blank">Quality International</a>.
                         </p>
                     </div>
@@ -443,50 +454,50 @@ body[dir="rtl"] .timeline-line::before {
     <section id="skills" class="py-24 bg-gray-50 dark:bg-slate-800/50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="skills.title">Technical Skills</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
                 <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8 reveal">
                 <div class="glass-card p-8 rounded-2xl h-full">
-                    <h3 class="text-xl font-bold mb-6 flex items-center gap-3" data-i18n="skills.group1_title">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
                         <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600">
                             <i class="fab fa-linux"></i>
                         </div>
                         Operations & Security
                     </h3>
                     <div class="space-y-6">
-                        <div data-i18n="skills.windows">
+                        <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700 dark:text-gray-300" data-i18n="skills.windows.name">Windows (XP - 11) & Server</span>
-                                <span class="text-sm font-bold text-primary" data-i18n="skills.experienced">Experienced</span>
+                                <span class="font-medium text-gray-700 dark:text-gray-300">Windows (XP - 11) & Server</span>
+                                <span class="text-sm font-bold text-primary">Experienced</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 overflow-hidden">
                                 <div class="bg-blue-600 h-2.5 rounded-full" style="width: 95%"></div>
                             </div>
                         </div>
-                        <div data-i18n="skills.linux">
+                        <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700 dark:text-gray-300" data-i18n="skills.linux.name">Linux Kali & Backtrack</span>
-                                <span class="text-sm font-bold text-primary" data-i18n="skills.intermediate">Intermediate</span>
+                                <span class="font-medium text-gray-700 dark:text-gray-300">Linux Kali & Backtrack</span>
+                                <span class="text-sm font-bold text-primary">Intermediate</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 overflow-hidden">
                                 <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 70%"></div>
                             </div>
                         </div>
-                        <div data-i18n="skills.fortinet">
+                        <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700 dark:text-gray-300" data-i18n="skills.fortinet.name">Fortinet Firewall</span>
-                                <span class="text-sm font-bold text-primary" data-i18n="skills.intermediate">Intermediate</span>
+                                <span class="font-medium text-gray-700 dark:text-gray-300">Fortinet Firewall</span>
+                                <span class="text-sm font-bold text-primary">Intermediate</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 overflow-hidden">
                                 <div class="bg-red-500 h-2.5 rounded-full" style="width: 65%"></div>
                             </div>
                         </div>
-                        <div data-i18n="skills.surveillance">
+                        <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700 dark:text-gray-300" data-i18n="skills.surveillance.name">Surveillance Cameras</span>
-                                <span class="text-sm font-bold text-primary" data-i18n="skills.experienced">Experienced</span>
+                                <span class="font-medium text-gray-700 dark:text-gray-300">Surveillance Cameras</span>
+                                <span class="text-sm font-bold text-primary">Experienced</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 overflow-hidden">
                                 <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
@@ -496,53 +507,53 @@ body[dir="rtl"] .timeline-line::before {
                 </div>
 
                 <div class="glass-card p-8 rounded-2xl h-full">
-                    <h3 class="text-xl font-bold mb-6 flex items-center gap-3" data-i18n="skills.group2_title">
+                    <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
                         <div class="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-900 flex items-center justify-center text-green-600">
                             <i class="fas fa-code"></i>
                         </div>
                         Software & Web Development
                     </h3>
                     <div class="space-y-6">
-                        <div data-i18n="skills.php_bootstrap">
+                        <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700 dark:text-gray-300" data-i18n="skills.php_bootstrap.name">PHP & Bootstrap</span>
-                                <span class="text-sm font-bold text-green-500" data-i18n="skills.skillful">Skillful</span>
+                                <span class="font-medium text-gray-700 dark:text-gray-300">PHP & Bootstrap</span>
+                                <span class="text-sm font-bold text-green-500">Skillful</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 overflow-hidden">
                                 <div class="bg-purple-500 h-2.5 rounded-full" style="width: 80%"></div>
                             </div>
                         </div>
-                        <div data-i18n="skills.sql">
+                        <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700 dark:text-gray-300" data-i18n="skills.sql.name">SQL / MySQL / PL-SQL</span>
-                                <span class="text-sm font-bold text-green-500" data-i18n="skills.skillful">Skillful</span>
+                                <span class="font-medium text-gray-700 dark:text-gray-300">SQL / MySQL / PL-SQL</span>
+                                <span class="text-sm font-bold text-green-500">Skillful</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 overflow-hidden">
                                 <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 75%"></div>
                             </div>
                         </div>
-                        <div data-i18n="skills.web_design">
+                        <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700 dark:text-gray-300" data-i18n="skills.web_design.name">Web Design (HTML/CSS/JS)</span>
-                                <span class="text-sm font-bold text-green-500" data-i18n="skills.skillful">Skillful</span>
+                                <span class="font-medium text-gray-700 dark:text-gray-300">Web Design (HTML/CSS/JS)</span>
+                                <span class="text-sm font-bold text-green-500">Skillful</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 overflow-hidden">
                                 <div class="bg-green-500 h-2.5 rounded-full" style="width: 85%"></div>
                             </div>
                         </div>
-                        <div data-i18n="skills.wordpress">
+                        <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700 dark:text-gray-300" data-i18n="skills.wordpress.name">WordPress</span>
-                                <span class="text-sm font-bold text-green-500" data-i18n="skills.skillful">Skillful</span>
+                                <span class="font-medium text-gray-700 dark:text-gray-300">WordPress</span>
+                                <span class="text-sm font-bold text-green-500">Skillful</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 overflow-hidden">
                                 <div class="bg-green-500 h-2.5 rounded-full" style="width: 85%"></div>
                             </div>
                         </div>
-                        <div data-i18n="skills.oracle_erp">
+                        <div>
                             <div class="flex justify-between mb-2">
-                                <span class="font-medium text-gray-700 dark:text-gray-300" data-i18n="skills.oracle_erp.name">Oracle System & ERP</span>
-                                <span class="text-sm font-bold text-red-500" data-i18n="skills.intermediate">Intermediate</span>
+                                <span class="font-medium text-gray-700 dark:text-gray-300">Oracle System & ERP</span>
+                                <span class="text-sm font-bold text-red-500">Intermediate</span>
                             </div>
                             <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 overflow-hidden">
                                 <div class="bg-red-500 h-2.5 rounded-full" style="width: 65%"></div>
@@ -553,35 +564,35 @@ body[dir="rtl"] .timeline-line::before {
             </div>
 
             <div class="mt-20 reveal">
-                <h3 class="text-2xl font-bold text-center mb-10 text-gray-700 dark:text-gray-200" data-i18n="certs.title">Certifications & Courses</h3>
+                <h3 class="text-2xl font-bold text-center mb-10 text-gray-700 dark:text-gray-200">Certifications & Courses</h3>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 text-center hover:shadow-lg transition-shadow">
                         <div class="w-12 h-12 mx-auto mb-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-full flex items-center justify-center text-yellow-500">
                              <i class="fas fa-certificate text-xl"></i>
                         </div>
-                        <h4 class="font-bold text-lg" data-i18n="certs.comptia_a_plus.name">CompTIA A+</h4>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium" data-i18n="certs.comptia_a_plus.duration">Mar 2018 - May 2018</p>
+                        <h4 class="font-bold text-lg">CompTIA A+</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Mar 2018 - May 2018</p>
                     </div>
                     <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 text-center hover:shadow-lg transition-shadow">
                         <div class="w-12 h-12 mx-auto mb-4 bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center text-blue-500">
                              <i class="fas fa-server text-xl"></i>
                         </div>
-                        <h4 class="font-bold text-lg" data-i18n="certs.mcsa_windows_server.name">MCSA Windows Server</h4>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium" data-i18n="certs.mcsa_windows_server.duration">2012-2016 Certification</p>
+                        <h4 class="font-bold text-lg">MCSA Windows Server</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">2012-2016 Certification</p>
                     </div>
                     <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 text-center hover:shadow-lg transition-shadow">
                         <div class="w-12 h-12 mx-auto mb-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-full flex items-center justify-center text-indigo-500">
                              <i class="fas fa-network-wired text-xl"></i>
                         </div>
-                        <h4 class="font-bold text-lg" data-i18n="certs.ccna.name">CCNA R&S </h4>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium" data-i18n="certs.ccna.duration">Cisco Training</p>
+                        <h4 class="font-bold text-lg">CCNA R&S </h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Cisco Training</p>
                     </div>
                     <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 text-center hover:shadow-lg transition-shadow">
                         <div class="w-12 h-12 mx-auto mb-4 bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center text-red-500">
                              <i class="fas fa-database text-xl"></i>
                         </div>
-                        <h4 class="font-bold text-lg" data-i18n="certs.oracle_forms.name">Oracle Forms</h4>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium" data-i18n="certs.oracle_forms.duration">Report Modification</p>
+                        <h4 class="font-bold text-lg">Oracle Forms</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">Report Modification</p>
                     </div>
                 </div>
             </div>
@@ -591,10 +602,12 @@ body[dir="rtl"] .timeline-line::before {
     <section id="gallery" class="py-16 bg-white dark:bg-slate-900">
         <div class="max-w-6xl mx-auto px-4 reveal">
             <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="gallery.certs_title">Certificate Gallery</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Certificate Gallery</h2>
                 <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
             </div>
+
             <div id="cert-slider" class="relative w-full max-w-4xl mx-auto rounded-xl shadow-2xl overflow-hidden group gallery-container border border-gray-200 dark:border-slate-700">
+                
                 <div class="slider-track">
                     <div class="slide">
                         <img src="pic/Certificate/Software Engineer Intern Certificate.png" 
@@ -684,13 +697,15 @@ body[dir="rtl"] .timeline-line::before {
     <section id="projects" class="py-16 bg-white dark:bg-slate-900">
         <div class="max-w-6xl mx-auto px-4 reveal">
             <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="gallery.projects_title">Project Gallery</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Project Gallery</h2>
                 <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
             </div>
+
             <div id="proj-slider" class="relative w-full max-w-4xl mx-auto rounded-xl shadow-2xl overflow-hidden group gallery-container border border-gray-200 dark:border-slate-700">
                 
                 <div class="slider-track">
                     <div class="slide">
+                        <!--<img src="pic/Project/1.png" -->
                         <img src="#" 
                              onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Project+1'" 
                              alt="Project 1" data-link="https://example.com/project1">
@@ -770,7 +785,7 @@ body[dir="rtl"] .timeline-line::before {
      <section id="education" class="py-24">
         <div class="max-w-4xl mx-auto px-4 reveal">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="education.title">Education</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Education</h2>
                 <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
             </div>
             
@@ -779,13 +794,13 @@ body[dir="rtl"] .timeline-line::before {
                 <div class="w-20 h-20 mx-auto bg-blue-50 dark:bg-slate-700 rounded-full flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300">
                      <i class="fas fa-graduation-cap text-4xl"></i>
                 </div>
-                <h3 class="text-2xl font-bold mb-2" data-i18n="education.degree">Bachelor of Information Systems</h3>
-                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6" data-i18n="education.institution">Higher Institute of Computer Science, Egypt</p>
+                <h3 class="text-2xl font-bold mb-2">Bachelor of Information Systems</h3>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">Higher Institute of Computer Science, Egypt</p>
                 <div class="flex justify-center gap-4 text-sm font-semibold flex-wrap">
-                    <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 px-4 py-1.5 rounded-full" data-i18n="education.duration">
+                    <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 px-4 py-1.5 rounded-full">
                         <i class="far fa-calendar-alt mr-2"></i> July 2012 - July 2016
                     </span>
-                    <span class="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200 px-4 py-1.5 rounded-full" data-i18n="education.grade">
+                    <span class="bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200 px-4 py-1.5 rounded-full">
                         <i class="fas fa-star mr-2"></i> Grade: Very Good (82%)
                     </span>
                 </div>
@@ -798,8 +813,8 @@ body[dir="rtl"] .timeline-line::before {
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3"></div>
 
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="contact.title">Let's Work Together</h2>
-            <p class="text-gray-400 mb-12 max-w-xl mx-auto text-lg" data-i18n="contact.subtitle">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Work Together</h2>
+            <p class="text-gray-400 mb-12 max-w-xl mx-auto text-lg">
                 Currently available for new opportunities in Kuwait. Feel free to reach out for collaboration or technical consultation.
             </p>
             
@@ -808,7 +823,7 @@ body[dir="rtl"] .timeline-line::before {
                     <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 text-primary text-xl group-hover:bg-green-600 group-hover:text-white transition-colors">
                         <i class="fab fa-whatsapp"></i>
                     </div>
-                    <h4 class="font-bold mb-2" data-i18n="contact.card1_title">WhatsApp / Phone</h4>
+                    <h4 class="font-bold mb-2">WhatsApp / Phone</h4>
                     <a href="https://wa.me/96550157915" target="_blank" class="text-gray-400 font-mono text-sm hover:text-white transition-colors block">
                         +965 50157915
                     </a>
@@ -818,32 +833,32 @@ body[dir="rtl"] .timeline-line::before {
                     <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 text-primary text-xl">
                          <i class="fas fa-envelope"></i>
                     </div>
-                    <h4 class="font-bold mb-2" data-i18n="contact.card2_title">Email</h4>
+                    <h4 class="font-bold mb-2">Email</h4>
                     <a href="mailto:itgalal8@hotmail.com" class="text-gray-400 hover:text-white transition-colors text-sm break-all">itgalal8@hotmail.com</a>
                 </div>
                 <div class="p-6 bg-slate-800/80 backdrop-blur rounded-2xl hover:bg-slate-700 transition-colors border border-slate-700">
                      <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 text-primary text-xl">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h4 class="font-bold mb-2" data-i18n="contact.card3_title">Location</h4>
-                    <p class="text-gray-400 text-sm" data-i18n="contact.card3_value">Kuwait, Ahmadi</p>
+                    <h4 class="font-bold mb-2">Location</h4>
+                    <p class="text-gray-400 text-sm">Kuwait, Ahmadi</p>
                 </div>
             </div>
 
             <form class="max-w-lg mx-auto space-y-4 text-left p-8 bg-slate-800/50 rounded-3xl border border-slate-700">
                 <div>
-                    <label class="block text-sm font-medium mb-2 text-gray-300" data-i18n="contact.form_name_label">Name</label>
-                    <input type="text" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-600 focus:outline-none focus:border-primary text-white placeholder-gray-600 transition-colors" data-i18n="[placeholder]contact.form_name_placeholder">
+                    <label class="block text-sm font-medium mb-2 text-gray-300">Name</label>
+                    <input type="text" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-600 focus:outline-none focus:border-primary text-white placeholder-gray-600 transition-colors" placeholder="Your Name">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium mb-2 text-gray-300" data-i18n="contact.form_email_label">Email</label>
-                    <input type="email" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-600 focus:outline-none focus:border-primary text-white placeholder-gray-600 transition-colors" data-i18n="[placeholder]contact.form_email_placeholder">
+                    <label class="block text-sm font-medium mb-2 text-gray-300">Email</label>
+                    <input type="email" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-600 focus:outline-none focus:border-primary text-white placeholder-gray-600 transition-colors" placeholder="your@email.com">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium mb-2 text-gray-300" data-i18n="contact.form_message_label">Message</label>
-                    <textarea rows="4" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-600 focus:outline-none focus:border-primary text-white placeholder-gray-600 transition-colors" data-i18n="[placeholder]contact.form_message_placeholder"></textarea>
+                    <label class="block text-sm font-medium mb-2 text-gray-300">Message</label>
+                    <textarea rows="4" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-600 focus:outline-none focus:border-primary text-white placeholder-gray-600 transition-colors" placeholder="How can I help you?"></textarea>
                 </div>
-                <button type="button" onclick="alert(i18next.t('contact.form_alert'))" class="w-full py-4 bg-primary hover:bg-blue-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-900/50 mt-2" data-i18n="contact.form_button">
+                <button type="button" onclick="alert('Thank you for reaching out! (Demo)')" class="w-full py-4 bg-primary hover:bg-blue-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-900/50 mt-2">
                     Send Message
                 </button>
             </form>
@@ -851,326 +866,10 @@ body[dir="rtl"] .timeline-line::before {
     </section>
     
     <footer class="py-8 bg-black text-center text-gray-600 text-sm border-t border-gray-900">
-        <p data-i18n="footer.copyright">&copy; 2025 Ahmed Galal.</p>
+        <p>&copy; 2025 Ahmed Galal.</p>
     </footer>
 
     <script>
-        
-// ------------------------------------
-// 1. ملفات اللغات (Resources - JSON)
-// ------------------------------------
-
-const resources = {
-    // English (en) - اللغة الافتراضية
-    en: {
-        translation: {
-            page_title: "Ahmed Galal - Portfolio",
-            nav: {
-                home: "Home", about: "About", experience: "Experience", skills: "Skills",
-                certificates: "Certificates", projects: "Projects", contact: "Contact"
-            },
-            home: {
-                role: "System Analyst & IT Specialist",
-                hi_im: "Hi, I'm",
-                bio: "Experienced IT professional based in Kuwait. Specializing in technical support, ERP systems, network surveillance, and web development.",
-                contact_me_btn: "Contact Me",
-                view_exp_btn: "View Experience",
-                status: "Status", available: "Available"
-            },
-            about: {
-                title: "About Me", objective_title: "Professional Objective",
-                objective_p1: "I am a dedicated IT specialist with a strong background in System Analysis and Technical Support. My goal is to provide exceptional support in Windows operating systems, surveillance camera networks, and internet infrastructure.",
-                objective_p2: "I have extensive experience working with Oracle ERP systems, developing websites, and managing WordPress content management systems.",
-                location_label: "Location", location_value: "Ahmadi, Kuwait",
-                nationality_label: "Nationality", nationality_value: "Egyptian",
-                card1_title: "Tech Support", card1_subtitle: "Windows OS & Hardware",
-                card2_title: "ERP Systems", card2_subtitle: "Oracle Implementation",
-                card3_title: "Surveillance", card3_subtitle: "CCTV & Network Security",
-                card4_title: "Web Dev", card4_subtitle: "Wordpress & Full Stack"
-            },
-            experience: { title: "Work History" },
-            exp: {
-                job1: { title: "Technical Support (Trained)", company: "Rumaithiya Cooperative Society", duration: "May 2022 - Present", description: "Providing technical support for user problems, computer systems, and ERP system maintenance." },
-                job2: { title: "Assistant IT Manager", company: "Rumaithiya Cooperative Society", duration: "Jul 2021 - May 2022", description: "Supervised 16 branches, solved internal/external network issues, managed POS systems, catering branch systems, and hardware support." },
-                job3: { title: "Technical Support", company: "Rumaithiya Cooperative Society", duration: "Mar 2020 - Jul 2021", description: "Supported user problems, computer systems, and general ERP system usage." },
-                job4: { title: "Technical Support", company: "Al Wafra Cooperative Society", duration: "Jan 2020 - Mar 2020", description: "Staff training on ERP system BBS, owner hro+." },
-                job5: { title: "Technical Support", company: "Logic X - Al Naseem Cooperative Society", duration: "Dec 2019 - Jan 2020", description: "ERP System Management and staff training at Al Naseem Cooperative Society, Supervising the 2019 annual inventory." },
-                job6: { title: "Technical Support", company: "Logic X - Abu 'Fteira Cooperative Society", duration: "Sep 2019 - Dec 2019", description: "ERP system management and staff training at Abu 'Fteira Cooperative Society, with a focus on meeting the electronic supply requirements for suppliers." },
-                job7: { title: "Technical Support", company: "Logic X - Fahad Al Ahmad Cooperative Society", duration: "Apr 2019 - Sep 2019", description: "ERP System Management and staff training at Fahad Al Ahmad Cooperative Society." },
-                job8: { title: "Data analysis", company: "Quality International", duration: "Oct 2018 - Apr 2019", description: "Data analysis, working on a website system for Quality International." }
-            },
-            skills: {
-                title: "Technical Skills", experienced: "Experienced", skillful: "Skillful", intermediate: "Intermediate",
-                group1_title: "Operations & Security",
-                windows: { name: "Windows (XP - 11) & Server" }, linux: { name: "Linux Kali & Backtrack" },
-                fortinet: { name: "Fortinet Firewall" }, surveillance: { name: "Surveillance Cameras" },
-                group2_title: "Software & Web Development",
-                php_bootstrap: { name: "PHP & Bootstrap" }, sql: { name: "SQL / MySQL / PL-SQL" },
-                web_design: { name: "Web Design (HTML/CSS/JS)" }, wordpress: { name: "WordPress" },
-                oracle_erp: { name: "Oracle System & ERP" }
-            },
-            certs: {
-                title: "Certifications & Courses",
-                comptia_a_plus: { name: "CompTIA A+", duration: "Mar 2018 - May 2018" },
-                mcsa_windows_server: { name: "MCSA Windows Server", duration: "2012-2016 Certification" },
-                ccna: { name: "CCNA R&S", duration: "Cisco Training" },
-                oracle_forms: { name: "Oracle Forms", duration: "Report Modification" }
-            },
-            gallery: { certs_title: "Certificate Gallery", projects_title: "Project Gallery" },
-            education: {
-                title: "Education", degree: "Bachelor of Information Systems",
-                institution: "Higher Institute of Computer Science, Egypt",
-                duration: "July 2012 - July 2016", grade: "Grade: Very Good (82%)"
-            },
-            contact: {
-                title: "Let's Work Together",
-                subtitle: "Currently available for new opportunities in Kuwait. Feel free to reach out for collaboration or technical consultation.",
-                card1_title: "WhatsApp / Phone", card2_title: "Email", card3_title: "Location", card3_value: "Kuwait, Ahmadi",
-                form_name_label: "Name", form_email_label: "Email", form_message_label: "Message",
-                form_name_placeholder: "Your Name", form_email_placeholder: "your@email.com",
-                form_message_placeholder: "How can I help you?",
-                form_button: "Send Message", form_alert: "Thank you for reaching out! (Demo)"
-            },
-            footer: { copyright: "© 2025 Ahmed Galal." }
-        }
-    },
-    // French (fr)
-    fr: {
-        translation: {
-            page_title: "Ahmed Galal - Portfolio",
-            nav: {
-                home: "Accueil", about: "À Propos", experience: "Expérience", skills: "Compétences",
-                certificates: "Certificats", projects: "Projets", contact: "Contact"
-            },
-            home: {
-                role: "Analyste Système & Spécialiste IT",
-                hi_im: "Salut, je suis",
-                bio: "Professionnel IT expérimenté basé au Koweït. Spécialisé en support technique, systèmes ERP, surveillance réseau et développement web.",
-                contact_me_btn: "Me Contacter",
-                view_exp_btn: "Voir Expérience",
-                status: "Statut", available: "Disponible"
-            },
-            about: {
-                title: "À Propos", objective_title: "Objectif Professionnel",
-                objective_p1: "Je suis un spécialiste IT dévoué avec une solide expérience en analyse de systèmes et support technique. Mon objectif est de fournir un soutien exceptionnel pour les systèmes d'exploitation Windows, les réseaux de caméras de surveillance et l'infrastructure Internet.",
-                objective_p2: "J'ai une vaste expérience de travail avec les systèmes ERP Oracle, le développement de sites web et la gestion de systèmes de gestion de contenu WordPress.",
-                location_label: "Localisation", location_value: "Ahmadi, Koweït",
-                nationality_label: "Nationalité", nationality_value: "Égyptien",
-                card1_title: "Support Technique", card1_subtitle: "Windows OS & Matériel",
-                card2_title: "Systèmes ERP", card2_subtitle: "Implémentation Oracle",
-                card3_title: "Surveillance", card3_subtitle: "CCTV & Sécurité Réseau",
-                card4_title: "Développement Web", card4_subtitle: "Wordpress & Full Stack"
-            },
-            experience: { title: "Historique de Travail" },
-            exp: {
-                job1: { title: "Support Technique (Formé)", company: "Rumaithiya Cooperative Society", duration: "Mai 2022 - Présent", description: "Fournir un support technique pour les problèmes utilisateurs, les systèmes informatiques et la maintenance du système ERP." },
-                job2: { title: "Assistant Manager IT", company: "Rumaithiya Cooperative Society", duration: "Juil 2021 - Mai 2022", description: "Supervision de 16 succursales, résolution de problèmes réseau internes/externes, gestion des systèmes POS, systèmes de restauration et support matériel." },
-                job3: { title: "Support Technique", company: "Rumaithiya Cooperative Society", duration: "Mar 2020 - Juil 2021", description: "Soutien aux problèmes utilisateurs, aux systèmes informatiques et à l'utilisation générale du système ERP." },
-                job4: { title: "Support Technique", company: "Al Wafra Cooperative Society", duration: "Jan 2020 - Mar 2020", description: "Formation du personnel sur le système ERP BBS, propriétaire hro+." },
-                job5: { title: "Support Technique", company: "Logic X - Al Naseem Cooperative Society", duration: "Déc 2019 - Jan 2020", description: "Gestion du système ERP et formation du personnel à Al Naseem, supervision de l'inventaire annuel 2019." },
-                job6: { title: "Support Technique", company: "Logic X - Abu 'Fteira Cooperative Society", duration: "Sep 2019 - Déc 2019", description: "Gestion du système ERP et formation du personnel à Abu 'Fteira, accent mis sur la satisfaction des exigences d'approvisionnement électronique pour les fournisseurs." },
-                job7: { title: "Support Technique", company: "Logic X - Fahad Al Ahmad Cooperative Society", duration: "Avr 2019 - Sep 2019", description: "Gestion du système ERP et formation du personnel à Fahad Al Ahmad." },
-                job8: { title: "Analyse de Données", company: "Quality International", duration: "Oct 2018 - Avr 2019", description: "Analyse de données, travail sur un système de site web pour Quality International." }
-            },
-            skills: {
-                title: "Compétences Techniques", experienced: "Expérimenté", skillful: "Compétent", intermediate: "Intermédiaire",
-                group1_title: "Opérations & Sécurité",
-                windows: { name: "Windows (XP - 11) & Serveur" }, linux: { name: "Linux Kali & Backtrack" },
-                fortinet: { name: "Pare-feu Fortinet" }, surveillance: { name: "Caméras de Surveillance" },
-                group2_title: "Logiciels & Développement Web",
-                php_bootstrap: { name: "PHP & Bootstrap" }, sql: { name: "SQL / MySQL / PL-SQL" },
-                web_design: { name: "Conception Web (HTML/CSS/JS)" }, wordpress: { name: "WordPress" },
-                oracle_erp: { name: "Système Oracle & ERP" }
-            },
-            certs: {
-                title: "Certifications & Cours",
-                comptia_a_plus: { name: "CompTIA A+", duration: "Mar 2018 - Mai 2018" },
-                mcsa_windows_server: { name: "MCSA Windows Server", duration: "Certification 2012-2016" },
-                ccna: { name: "CCNA R&S", duration: "Formation Cisco" },
-                oracle_forms: { name: "Oracle Forms", duration: "Modification de Rapport" }
-            },
-            gallery: { certs_title: "Galerie de Certificats", projects_title: "Galerie de Projets" },
-            education: {
-                title: "Éducation", degree: "Licence en Systèmes d'Information",
-                institution: "Institut Supérieur d'Informatique, Égypte",
-                duration: "Juillet 2012 - Juillet 2016", grade: "Mention : Très Bien (82%)"
-            },
-            contact: {
-                title: "Travaillons Ensemble",
-                subtitle: "Actuellement disponible pour de nouvelles opportunités au Koweït. N'hésitez pas à me contacter pour une collaboration ou une consultation technique.",
-                card1_title: "WhatsApp / Téléphone", card2_title: "Email", card3_title: "Localisation", card3_value: "Koweït, Ahmadi",
-                form_name_label: "Nom", form_email_label: "Email", form_message_label: "Message",
-                form_name_placeholder: "Votre Nom", form_email_placeholder: "votre@email.com",
-                form_message_placeholder: "Comment puis-je vous aider ?",
-                form_button: "Envoyer Message", form_alert: "Merci de nous avoir contactés ! (Démo)"
-            },
-            footer: { copyright: "© 2025 Ahmed Galal." }
-        }
-    },
-    // Arabic (ar)
-    ar: {
-        translation: {
-            page_title: "أحمد جلال - ملف الأعمال",
-            nav: {
-                home: "الرئيسية", about: "عني", experience: "الخبرات", skills: "المهارات",
-                certificates: "الشهادات", projects: "المشاريع", contact: "التواصل"
-            },
-            home: {
-                role: "محلل نظم وأخصائي تكنولوجيا معلومات",
-                hi_im: "مرحباً، أنا",
-                bio: "محترف تكنولوجيا معلومات ذو خبرة، مقيم في الكويت. متخصص في الدعم الفني، وأنظمة تخطيط موارد المؤسسات (ERP)، ومراقبة الشبكات، وتطوير الويب.",
-                contact_me_btn: "تواصل معي",
-                view_exp_btn: "عرض الخبرات",
-                status: "الحالة", available: "متاح"
-            },
-            about: {
-                title: "عني", objective_title: "الهدف المهني",
-                objective_p1: "أنا أخصائي تكنولوجيا معلومات ملتزم، ولدي خلفية قوية في تحليل النظم والدعم الفني. هدفي هو تقديم دعم استثنائي في أنظمة تشغيل ويندوز، وشبكات كاميرات المراقبة، والبنية التحتية للإنترنت.",
-                objective_p2: "لدي خبرة واسعة في العمل مع أنظمة أوراكل لتخطيط موارد المؤسسات (ERP)، وتطوير المواقع الإلكترونية، وإدارة أنظمة ووردبريس.",
-                location_label: "الموقع", location_value: "الأحمدي، الكويت",
-                nationality_label: "الجنسية", nationality_value: "مصري",
-                card1_title: "دعم فني", card1_subtitle: "أنظمة ويندوز وعتاد",
-                card2_title: "أنظمة ERP", card2_subtitle: "تطبيق أوراكل",
-                card3_title: "مراقبة", card3_subtitle: "كاميرات وشبكات",
-                card4_title: "تطوير الويب", card4_subtitle: "ووردبريس وتطوير متكامل"
-            },
-            experience: { title: "سجل العمل" },
-            exp: {
-                job1: { title: "دعم فني (متدرب)", company: "جمعية الرميثية التعاونية", duration: "مايو 2022 - الآن", description: "تقديم الدعم الفني لمشاكل المستخدمين، والأنظمة الحاسوبية، وصيانة نظام ERP." },
-                job2: { title: "مساعد مدير تكنولوجيا المعلومات", company: "جمعية الرميثية التعاونية", duration: "يوليو 2021 - مايو 2022", description: "أشرف على 16 فرعاً، وحل مشاكل الشبكات الداخلية والخارجية، وأدار أنظمة نقاط البيع (POS)، وأنظمة فرع المطاعم، والدعم الفني للعتاد." },
-                job3: { title: "دعم فني", company: "جمعية الرميثية التعاونية", duration: "مارس 2020 - يوليو 2021", description: "دعم مشاكل المستخدمين، والأنظمة الحاسوبية، والاستخدام العام لنظام ERP." },
-                job4: { title: "دعم فني", company: "جمعية الوفرة التعاونية", duration: "يناير 2020 - مارس 2020", description: "تدريب الموظفين على نظام ERP BBS، و hro+." },
-                job5: { title: "دعم فني", company: "لوجيك إكس - جمعية النسيم التعاونية", duration: "ديسمبر 2019 - يناير 2020", description: "إدارة نظام ERP وتدريب الموظفين في جمعية النسيم التعاونية، والإشراف على الجرد السنوي لعام 2019." },
-                job6: { title: "دعم فني", company: "لوجيك إكس - جمعية أبو فطيرة التعاونية", duration: "سبتمبر 2019 - ديسمبر 2019", description: "إدارة نظام ERP وتدريب الموظفين في جمعية أبو فطيرة التعاونية، مع التركيز على تلبية متطلبات التوريد الإلكتروني للموردين." },
-                job7: { title: "دعم فني", company: "لوجيك إكس - جمعية فهد الأحمد التعاونية", duration: "أبريل 2019 - سبتمبر 2019", description: "إدارة نظام ERP وتدريب الموظفين في جمعية فهد الأحمد التعاونية." },
-                job8: { title: "تحليل بيانات", company: "كواليتي العالمية", duration: "أكتوبر 2018 - أبريل 2019", description: "تحليل البيانات، والعمل على نظام الموقع الإلكتروني لـ كواليتي العالمية." }
-            },
-            skills: {
-                title: "المهارات التقنية", experienced: "خبرة عالية", skillful: "مُتمكن", intermediate: "متوسط",
-                group1_title: "العمليات والأمان",
-                windows: { name: "ويندوز (XP - 11) وخوادم" }, linux: { name: "لينكس كالي وباك تراك" },
-                fortinet: { name: "جدار حماية فورتينت" }, surveillance: { name: "كاميرات المراقبة" },
-                group2_title: "البرمجيات وتطوير الويب",
-                php_bootstrap: { name: "PHP و Bootstrap" }, sql: { name: "SQL / MySQL / PL-SQL" },
-                web_design: { name: "تصميم الويب (HTML/CSS/JS)" }, wordpress: { name: "ووردبريس" },
-                oracle_erp: { name: "نظام أوراكل وتخطيط موارد المؤسسات" }
-            },
-            certs: {
-                title: "الشهادات والدورات",
-                comptia_a_plus: { name: "CompTIA A+", duration: "مارس 2018 - مايو 2018" },
-                mcsa_windows_server: { name: "MCSA خوادم ويندوز", duration: "شهادة 2012-2016" },
-                ccna: { name: "CCNA R&S", duration: "تدريب سيسكو" },
-                oracle_forms: { name: "أوراكل فورمز", duration: "تعديل التقارير" }
-            },
-            gallery: { certs_title: "معرض الشهادات", projects_title: "معرض المشاريع" },
-            education: {
-                title: "التعليم", degree: "بكالوريوس نظم معلومات",
-                institution: "المعهد العالي لعلوم الحاسب الآلي، مصر",
-                duration: "يوليو 2012 - يوليو 2016", grade: "التقدير: جيد جداً (82%)"
-            },
-            contact: {
-                title: "لنتعاون معاً",
-                subtitle: "متاح حالياً لفرص عمل جديدة في الكويت. لا تتردد في التواصل للتعاون أو الاستشارة الفنية.",
-                card1_title: "واتساب / هاتف", card2_title: "البريد الإلكتروني", card3_title: "الموقع", card3_value: "الكويت، الأحمدي",
-                form_name_label: "الاسم", form_email_label: "البريد الإلكتروني", form_message_label: "الرسالة",
-                form_name_placeholder: "اسمك", form_email_placeholder: "بريدك@الإلكتروني.com",
-                form_message_placeholder: "كيف يمكنني مساعدتك؟",
-                form_button: "إرسال الرسالة", form_alert: "شكراً لتواصلك! (تجريبي)"
-            },
-            footer: { copyright: "© 2025 أحمد جلال." }
-        }
-    }
-};
-
-// ------------------------------------
-// 2. وظيفة تحديث محتوى الصفحة
-// ------------------------------------
-
-function updateContent() {
-    // تحديث جميع العناصر التي تحمل السمة data-i18n
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        
-        // إذا كان المفتاح يبدأ بـ [placeholder] فهذا يعني أننا نحدث سمة placeholder
-        if (key.startsWith('[placeholder]')) {
-            const cleanKey = key.replace('[placeholder]', '');
-            element.setAttribute('placeholder', i18next.t(cleanKey));
-        } 
-        // إذا كان المفتاح [title]
-        else if (key.startsWith('[title]')) {
-            const cleanKey = key.replace('[title]', '');
-            element.setAttribute('title', i18next.t(cleanKey));
-        }
-        // النصوص العادية
-        else {
-            element.textContent = i18next.t(key);
-        }
-    });
-
-    // تحديث عنوان الصفحة (<title>)
-    document.title = i18next.t('page_title');
-
-    // ضبط اتجاه الصفحة (RTL / LTR) بناءً على اللغة
-    const currentLang = i18next.language;
-    const body = document.body;
-    const html = document.documentElement;
-    const selector = document.getElementById('language-selector');
-    const selectorMobile = document.getElementById('language-selector-mobile');
-
-    if (currentLang === 'ar') {
-        body.dir = 'rtl';
-        html.lang = 'ar';
-    } else {
-        body.dir = 'ltr';
-        html.lang = currentLang;
-    }
-    
-    // تحديث القوائم المنسدلة للغة
-    if (selector) selector.value = currentLang;
-    if (selectorMobile) selectorMobile.value = currentLang;
-}
-
-// ------------------------------------
-// 3. تهيئة المكتبة وربطها بمحددات اللغة
-// ------------------------------------
-
-// نستخدم 'en' كـ lng لضمان أن الإنجليزية هي اللغة الافتراضية عند أول زيارة.
-i18next.init({
-    lng: 'en', 
-    fallbackLng: 'en',
-    debug: false, // يمكن تفعيلها إلى true عند التطوير
-    resources: resources
-}, (err, t) => {
-    if (err) return console.log('something went wrong loading', err);
-    updateContent(); // تحديث المحتوى فوراً بعد التهيئة
-});
-
-
-function bindLanguageSelector(selectorId) {
-    const selector = document.getElementById(selectorId);
-    if (selector) {
-        selector.addEventListener('change', (event) => {
-            const newLang = event.target.value;
-            // حفظ اللغة في التخزين المحلي لتذكرها
-            localStorage.setItem('i18nextLng', newLang); 
-            i18next.changeLanguage(newLang, () => {
-                updateContent();
-            });
-        });
-    }
-}
-
-// بعد التحقق، نقوم بتهيئة اللغة بناءً على ما هو محفوظ أو 'en'
-const savedLang = localStorage.getItem('i18nextLng') || 'en';
-i18next.changeLanguage(savedLang, () => {
-    updateContent();
-});
-
-
-// ------------------------------------
-// 4. باقي سكربتات الكود الأصلي (تم تعديلها لتشمل محددات اللغة الجديدة)
-// ------------------------------------
-
         // Dark Mode Logic
         const themeToggleBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
         const htmlElement = document.documentElement;
@@ -1228,10 +927,12 @@ i18next.changeLanguage(savedLang, () => {
         // REUSABLE GALLERY SLIDER LOGIC
         // ------------------------------------
         
+        // هذه الدالة تعمل على أي سليدر تعطيه الـ ID الخاص به
         function initSlider(containerId) {
             const container = document.getElementById(containerId);
-            if (!container) return; 
+            if (!container) return; // حماية إذا لم يوجد العنصر
 
+            // البحث عن العناصر داخل هذا السليدر فقط
             const track = container.querySelector('.slider-track');
             const slides = Array.from(track.children);
             const prevBtn = container.querySelector('.prev-btn');
@@ -1243,6 +944,7 @@ i18next.changeLanguage(savedLang, () => {
             function updateSlider() {
                 track.style.transform = `translateX(-${currentIndex * 100}%)`;
                 
+                // تحديث النقاط
                 dots.forEach(dot => {
                     dot.classList.remove('bg-white', 'scale-125');
                     dot.classList.add('bg-white/50');
@@ -1254,6 +956,7 @@ i18next.changeLanguage(savedLang, () => {
                 }
             }
 
+            // الزر التالي
             if (nextBtn) {
                 nextBtn.addEventListener('click', () => {
                     currentIndex = (currentIndex + 1) % slides.length;
@@ -1261,6 +964,7 @@ i18next.changeLanguage(savedLang, () => {
                 });
             }
 
+            // الزر السابق
             if (prevBtn) {
                 prevBtn.addEventListener('click', () => {
                     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
@@ -1268,6 +972,7 @@ i18next.changeLanguage(savedLang, () => {
                 });
             }
 
+            // تفعيل النقاط
             dots.forEach(dot => {
                 dot.addEventListener('click', (e) => {
                     const index = parseInt(e.target.dataset.index);
@@ -1278,6 +983,7 @@ i18next.changeLanguage(savedLang, () => {
                 });
             });
 
+            // فتح الرابط عند النقر على الصورة
             slides.forEach(slide => {
                 const img = slide.querySelector('img');
                 if (img) {
@@ -1290,11 +996,13 @@ i18next.changeLanguage(savedLang, () => {
                 }
             });
 
+            // التشغيل التلقائي (مؤقت خاص لكل سليدر)
             let autoPlayInterval = setInterval(() => {
                 currentIndex = (currentIndex + 1) % slides.length;
                 updateSlider();
             }, 5000);
 
+            // إيقاف التشغيل التلقائي عند تمرير الماوس (اختياري لتحسين التجربة)
             container.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
             container.addEventListener('mouseleave', () => {
                 autoPlayInterval = setInterval(() => {
@@ -1303,17 +1011,14 @@ i18next.changeLanguage(savedLang, () => {
                 }, 5000);
             });
 
+            // التشغيل الأولي
             updateSlider();
         }
 
         // تشغيل الكود بعد تحميل الصفحة
         document.addEventListener('DOMContentLoaded', () => {
-            // ربط مُحددات اللغة
-            bindLanguageSelector('language-selector');
-            bindLanguageSelector('language-selector-mobile');
-
-            initSlider('cert-slider'); 
-            initSlider('proj-slider'); 
+            initSlider('cert-slider'); // تشغيل سليدر الشهادات
+            initSlider('proj-slider'); // تشغيل سليدر المشاريع
         });
 
     </script>
