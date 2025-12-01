@@ -41,7 +41,7 @@
         .timeline-line::before {
             content: '';
             position: absolute;
-            left: 0; /* Will be handled by DIR in CSS if needed, but absolute positioning usually needs specific RTL overrides or logical properties */
+            left: 0;
             top: 0;
             height: 100%;
             width: 2px;
@@ -386,7 +386,7 @@
                     <div class="absolute left-4 rtl:right-4 md:left-1/2 rtl:md:right-1/2 transform -translate-x-1/2 rtl:translate-x-1/2 w-5 h-5 bg-gray-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900 z-10 group-hover:bg-primary transition-colors"></div>
                     <div class="md:w-[45%] pl-8 md:pl-0 rtl:pr-8 rtl:md:pr-0 md:text-right rtl:md:text-left">
                         <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed bg-white dark:bg-slate-800 p-4 rounded-lg shadow-sm" data-lang="exp8_desc">
-                             Data analysis, working on a website system for <a href="https://qualitykw.com/leadership" target="_blank">Quality International</a>.
+                             Data analysis, working on a website system for Quality International.
                         </p>
                     </div>
                 </div>
@@ -549,11 +549,14 @@
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang="cert_gal_title">Certificate Gallery</h2>
                 <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
             </div>
+            
             <div id="cert-slider" class="relative w-full max-w-4xl mx-auto rounded-xl shadow-2xl overflow-hidden group gallery-container border border-gray-200 dark:border-slate-700">
                 <div class="slider-track">
-                     <div class="slide"><img src="pic/Certificate/Software Engineer Intern Certificate.png" onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Software+Engineer+Intern'" alt="Cert"></div>
-                    <div class="slide"><img src="pic/Certificate/SQL (Basic) Certificate.png" onerror="this.src='https://placehold.co/800x340/1e40af/white?text=SQL+Basic'" alt="Cert"></div>
-                    <div class="slide"><img src="pic/Certificate/SQL (Intermediate) Certificate.png" onerror="this.src='https://placehold.co/800x340/2563eb/white?text=SQL+Intermediate'" alt="Cert"></div>
+                     <div class="slide"><img src="pic/Certificate/Software Engineer Intern Certificate.png" onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Certificate+1'" alt="Cert 1"></div>
+                    <div class="slide"><img src="pic/Certificate/SQL (Basic) Certificate.png" onerror="this.src='https://placehold.co/800x340/1e40af/white?text=Certificate+2'" alt="Cert 2"></div>
+                    <div class="slide"><img src="pic/Certificate/SQL (Intermediate) Certificate.png" onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Certificate+3'" alt="Cert 3"></div>
+                    <div class="slide"><img src="pic/Certificate/CCNA_RS.png" onerror="this.src='https://placehold.co/800x340/1e40af/white?text=Certificate+4'" alt="Cert 4"></div>
+                    <div class="slide"><img src="pic/Certificate/MCSA_Server.png" onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Certificate+5'" alt="Cert 5"></div>
                     </div>
                 <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"><i class="fas fa-chevron-left"></i></button>
                 <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"><i class="fas fa-chevron-right"></i></button>
@@ -567,10 +570,14 @@
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang="proj_gal_title">Project Gallery</h2>
                 <div class="w-20 h-1.5 bg-primary mx-auto rounded-full"></div>
             </div>
-             <div id="proj-slider" class="relative w-full max-w-4xl mx-auto rounded-xl shadow-2xl overflow-hidden group gallery-container border border-gray-200 dark:border-slate-700">
+            
+            <div id="proj-slider" class="relative w-full max-w-4xl mx-auto rounded-xl shadow-2xl overflow-hidden group gallery-container border border-gray-200 dark:border-slate-700">
                 <div class="slider-track">
-                     <div class="slide"><img src="#" onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Project+1'" alt="Project"></div>
-                    <div class="slide"><img src="#" onerror="this.src='https://placehold.co/800x340/1e40af/white?text=Project+2'" alt="Project"></div>
+                     <div class="slide"><img src="#" onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Project+1+Placeholder'" alt="Project 1"></div>
+                    <div class="slide"><img src="#" onerror="this.src='https://placehold.co/800x340/1e40af/white?text=Project+2+Placeholder'" alt="Project 2"></div>
+                    <div class="slide"><img src="#" onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Project+3+Placeholder'" alt="Project 3"></div>
+                    <div class="slide"><img src="#" onerror="this.src='https://placehold.co/800x340/1e40af/white?text=Project+4+Placeholder'" alt="Project 4"></div>
+                    <div class="slide"><img src="#" onerror="this.src='https://placehold.co/800x340/2563eb/white?text=Project+5+Placeholder'" alt="Project 5"></div>
                     </div>
                 <button class="prev-btn absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"><i class="fas fa-chevron-left"></i></button>
                 <button class="next-btn absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 z-10"><i class="fas fa-chevron-right"></i></button>
@@ -746,7 +753,7 @@
                 exp_title: "Historique Professionnel",
                 exp1_role: "Support Technique (Formé)", exp1_co: "Société Coopérative Rumaithiya", exp1_date: "Mai 2022 - Présent", exp1_desc: "Fournir un support technique pour les problèmes des utilisateurs, les systèmes informatiques et la maintenance du système ERP.",
                 exp2_role: "Assistant Manager IT", exp2_co: "Société Coopérative Rumaithiya", exp2_date: "Juil 2021 - Mai 2022", exp2_desc: "Supervision de 16 succursales, résolution des problèmes de réseau interne/externe, gestion des systèmes de point de vente.",
-                exp3_role: "Support Technique", exp3_co: "Société Coopérative Rumaithiya", exp3_date: "Mar 2020 - Juil 2021", exp3_desc: "Soutien aux problèmes des utilisateurs, aux systèmes informatiques et à l'utilisation générale du système ERP.",
+                exp3_role: "Support Technique", exp3_co: "Société Coopérative Rumaithiya", exp3_date: "Mar 2020 - Juil 2021", exp3_desc: "Soutien aux problèmes des utilisateurs، وأنظمة الكمبيوتر، واستخدام نظام ERP العام.",
                 exp4_role: "Support Technique", exp4_co: "Société Coopérative Al Wafra", exp4_date: "Jan 2020 - Mar 2020", exp4_desc: "Formation du personnel sur le système ERP BBS, propriétaire hro+.",
                 exp5_role: "Support Technique", exp5_co: "Logic X - Al Naseem", exp5_date: "Déc 2019 - Jan 2020", exp5_desc: "Gestion du système ERP et formation du personnel à la Société Coopérative Al Naseem.",
                 exp6_role: "Support Technique", exp6_co: "Logic X - Abu 'Fteira", exp6_date: "Sep 2019 - Déc 2019", exp6_desc: "Gestion du système ERP et formation du personnel à la Société Coopérative Abu 'Fteira.",
@@ -756,9 +763,9 @@
                 sk_win: "Windows (XP - 11) & Serveur", sk_linux: "Linux Kali & Backtrack", sk_fire: "Pare-feu Fortinet", sk_cam: "Caméras de Surveillance", sk_web: "Conception Web (HTML/CSS/JS)", sk_oracle: "Système Oracle & ERP",
                 cert_courses_title: "Certifications et Cours",
                 cert_gal_title: "Galerie de Certificats", proj_gal_title: "Galerie de Projets",
-                edu_title: "Éducation", edu_degree: "Licence en Systèmes d'Information", edu_uni: "Institut Supérieur d'Informatique, Égypte", edu_date: "Juin 2012 - Juil 2016", edu_grade: "Note: Très Bien (82%)",
+                edu_title: "Éducation", edu_degree: "Licence en Systèmes d'Information", edu_uni: "Institut Supérieur d'Informatique، Égypte", edu_date: "Juin 2012 - Juil 2016", edu_grade: "Note: Très Bien (82%)",
                 contact_title: "Travaillons Ensemble", contact_desc: "Actuellement disponible pour de nouvelles opportunités au Koweït. N'hésitez pas à me contacter pour une collaboration ou une consultation technique.",
-                form_name: "Nom", form_name_ph: "Votre Nom", form_email: "Email", form_email_ph: "votre@email.com", form_msg: "Message", form_msg_ph: "Comment puis-je vous aider ?", btn_send: "Envoyer le message"
+                form_name: "Nom", form_name_ph: "Votre Nom", form_email: "Email", form_email_ph: "votre@email.com", form_msg: "Message", form_msg_ph: "Comment puis-je vous aider ؟", btn_send: "Envoyer le message"
             }
         };
 
@@ -856,32 +863,40 @@
             const prevBtn = container.querySelector('.prev-btn');
             const nextBtn = container.querySelector('.next-btn');
             let currentIndex = 0;
+            const totalSlides = slides.length;
 
             function updateSlider() {
-                // Adjust for RTL if needed, but standard translate usually works LTR visually for sliders unless strictly directed
+                // Prevent error if there are no slides
+                if (totalSlides === 0) return;
+                
+                // Ensure index wraps around
+                currentIndex = (currentIndex % totalSlides + totalSlides) % totalSlides;
                 track.style.transform = `translateX(-${currentIndex * 100}%)`;
             }
 
             if (nextBtn) {
                 nextBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % slides.length;
+                    currentIndex++;
                     updateSlider();
                 });
             }
             if (prevBtn) {
                 prevBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    currentIndex--;
                     updateSlider();
                 });
             }
+            
+            // Auto Play
             let autoPlayInterval = setInterval(() => {
-                currentIndex = (currentIndex + 1) % slides.length;
+                currentIndex++;
                 updateSlider();
             }, 5000);
+            
             container.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
             container.addEventListener('mouseleave', () => {
                 autoPlayInterval = setInterval(() => {
-                    currentIndex = (currentIndex + 1) % slides.length;
+                    currentIndex++;
                     updateSlider();
                 }, 5000);
             });
